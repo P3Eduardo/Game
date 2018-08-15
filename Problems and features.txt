@@ -1,0 +1,18 @@
+//problems we face
+
+//1. The colorOnClick are not staying, it comes on the class's but later it disappears when it goes to the next one.
+
+//2. The failOnClick overrides the colorOnClick.
+
+//3. When the colorOnclick is not on the class's it cannot be compared to the selected tiles 
+which is what the user clicks on, hence the override.
+
+//4. <div class="playingtile colorOnClick failOnClick" id="playTile21"></div> 
+It should not be this way if you clicked on the right on. 
+
+The right way should be
+<div class="playingtile colorOnClick" id="playTile21"></div> 
+If the user got it correct.
+
+//5. If the box in that pattern has colorOnClick and the user selects a box that has colorOnClick 
+it remains true. If not false, failOnClick is triggered.
