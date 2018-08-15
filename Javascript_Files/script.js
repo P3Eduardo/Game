@@ -7,77 +7,63 @@ let playingTile = document.querySelectorAll(".playingtile");
 
 //changes tile colorOnclick
 playingTile.forEach((e)=>{
-	e.addEventListener("mouseup",colorChange);
+	e.addEventListener("click",colorChange);
 });
 
 //changes colorOnClick to red on all tiles if you click on the wrong tile
 function colorChange(e){
 
 
-    if (! e.target.classList.contains('colorOnClick'))
+    if (!e.target.classList.contains('colorOnClick'))
     {
      lost();
     }
     else
     {
-        //document.getElementById(e.target.id).classList.remove("fadeColor");
-        document.getElementById(e.target.id).classList.replace("fadeColor","colorOnClick");
-
+        document.getElementById(e.target.id).classList.remove("fadeColor");
+				document.getElementById(e.target.id).classList.add("colorOnClick");
         if(patternTiles.indexOf(e.target.id)!== -1)
         {
             patternTiles.splice(patternTiles.indexOf(e.target.id),1);
-        }
-;
-
+        };
         if(patternTiles.length === 0)
         {
             win();
         }
     }
 }
-
 // Random generate Function for pattern and wrong tiles turning red
 function timer(ms)
 {
     return new Promise(res => setTimeout(res, ms));
 }
-
  async function randGene()
  {
     for(let q = 1; q<=25; q++)
     {
         tilesIds.push('playTile' + q);
     }
-
     let patternLength = Math.floor(Math.random()*3)+7;
 
     for(let c = 0, item = 0,q = 0; c < patternLength; c++)
     {
         q = Math.floor(Math.random()*tilesIds.length);
         items = tilesIds[q];
-
         tilesIds.splice(q,1);
         patternTiles.push(items);
-
         document.getElementById(items).classList.add('colorOnClick');
-        await timer(2400);
-        fading()
-
+        await timer(2400)
+				fading()
     }
-
  }
-
  // Timer for the game to start
  setTimeout(randGene, 5000);
-
 // Timer for blocks to disappear right after appearing.
 async function fading()
 {
-
     for(let i = 0; i <= patternTiles.length; i++)
     {
         item = patternTiles[i];
-        //document.getElementById(items).classList.add("colorOnClick");
         document.getElementById(items).classList.add("fadeColor");
         await timer(2400);
     }
@@ -91,25 +77,16 @@ async function lost()
     {
         tilesIds.push('playTile' + i);
     }
-
-    for(let q = 0; q<=24; q++)
-    {
-
-    }
-
     let patternLength = 25;
-
     for(let c = 0, item = 0,i = 0; c < patternLength; c++)
     {
         item = tilesIds[c];
         lostTiles.push(item);
-
         document.getElementById(item).classList.add('failOnClick');
-        await timer(0);
+        await timer(20);
     }
 
 }
-
 async function win()
 {
     tilesIds = [];
@@ -117,21 +94,14 @@ async function win()
     {
         tilesIds.push('playTile' + i);
     }
-
-    for(let q = 0; q<=24; q++)
-    {
-
-    }
-
     let patternLength = 25;
 
     for(let c = 0, item = 0,i = 0; c < patternLength; c++)
     {
         item = tilesIds[c];
         lostTiles.push(item);
-
         document.getElementById(item).classList.add('rightOnClick');
-        await timer(10);
+        await timer(20);
     }
   }
 
