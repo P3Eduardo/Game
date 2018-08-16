@@ -1,56 +1,45 @@
+#timer
+{
+  font-family: 'Oleo Script';
+  font-size: 40px;
+  background-color: white;
+  border: 0.8px solid black;
+  border-radius: 10px;
+  text-align: center;
+    color: skyblue;
+}
+
 
 .change
 {
   margin-left: 100px;
 }
 
+.Color3
+{
+  font-family: 'Oleo Script';
+  font-size: 30px;
+    color: white;
+  margin-top: 50px;
+
+}
 .Color2
 {
-
-    font-family: 'Oleo Script';
-    font-size: 30px;
-    color: White;
-    margin-right: 100px;
+  font-family: 'Oleo Script';
+  font-size: 30px;
+  color: skyblue;
+  margin-right: 100px;
 }
 .Color
 {
-
-    font-family: 'Oleo Script';
-    font-size: 70px;
-    color: White;
+  font-family: 'Oleo Script';
+  font-size: 70px;
+  color: White;
 }
-
-
 .body2
 {
-    background-image: url("background-for-game.png");
-
+  background-image: url("background-for-game.png");
 }
-
-.content
-{
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns:500px 500px 500px;
-    grid-template-rows: 100px 100px 100px;
-    justify-content: center;
-
-}
-
-.time
-{
-  background-image:url('Timer.png');
-  height:116px;
-  width: 697px;
-  display: block;
-  margin-bottom:400px;
-  margin-left:auto;
-  transform:rotate(270deg);
-
-}
-
-
-
 .button
 {
   background-image:url('Start_Button.png');
@@ -58,54 +47,53 @@
   height: 105px;
   width: 518px;
 }
-
-
-
 .body
 {
-    background-image: url("background-for-game.png");
-
+  background-image: url("background-for-game.png");
 }
 .h1
-{   margin: 8px;
-    font-family: 'Oleo Script';
-    font-size: 70px;
-    text-align: center;
-    color: skyblue;
+{
+  margin: 8px;
+  font-family: 'Oleo Script';
+  font-size: 70px;
+  text-align: center;
+  color: skyblue;
 }
-    .playing-container
-    {
-        margin-top: 25px;
-        display:grid;
-        grid-template-columns: 100px 100px 100px 100px 100px;
-        grid-template-rows: 100px 100px 100px 100px 100px;
-        justify-content: center;
-    }
+.playing-container
+{
+  margin-top: 25px;
+  display:grid;
+  grid-template-columns: 100px 100px 100px 100px 100px 100px 132px;
+  grid-template-rows: 100px 100px 100px 100px 100px 100px 100px;
+  margin-left: 700px;
+}
+.playingtile
+{
+  background-color: white;
+  border: 0.8px solid black;
+  border-radius: 10px
+}
+.chosen
+{
+  background-color:rgb(17, 36, 252)
+}
 
-    .playingtile
-    {
-        background-color: white;
-        border: 0.8px solid black;
-        border-radius: 10px
-    }
-    .chosen {background-color:rgb(17, 36, 252)}
+.colorOnClick
+{
+  background-color:rgb(17, 36, 252);
+}
 
-      .colorOnClick
-      {
-          background-color:rgb(17, 36, 252);
-      }
+.fadeColor
+{
+  background-color: white;
+}
 
-      .fadeColor
-      {
-          background-color: white;
-      }
+.failOnClick
+{
+  background-color:rgb(224, 6, 6);
+}
 
-      .failOnClick
-      {
-        background-color:rgb(224, 6, 6);
-      }
-
-      .rightOnClick
-      {
-        background-color: rgb(36, 165, 44);
-      }
+.rightOnClick
+{
+  background-color: rgb(36, 165, 44);
+}

@@ -3,7 +3,7 @@ let tilesIds = [];  // Tile ids array
 const patternTiles = []; // Pattern array
 const lostTiles = []; // Tiles that are incorrect and not in the pattern, tiles the users has not yet selected
 let canPlay = false; // Boundaries for the pattern to be completed
-
+let hasLost = false;
 let playingTile = document.querySelectorAll(".playingtile");
 
 
@@ -17,6 +17,7 @@ async function colorChange(e){
         //console.log("classList: ",e.target.classList == patternTiles)
         if (patternTiles.indexOf(e.target.id) == -1 && !e.target.classList.contains('chosen'))//!e.target.classList.contains('colorOnClick'))
         {
+          hasLost = true;
         lost();
         }
         else
@@ -67,6 +68,7 @@ function timer(ms)
     }
     console.log("patternTiles inside randGene: ",patternTiles);
     canPlay = true;
+    Countdown()
  }
 
  // Timer for the game to start
@@ -99,6 +101,7 @@ async function fading()
 // it turns red
 async function lost()
 {
+    clearInterval(Countdown);
     tilesIds = [];
     for(let i = 1; i<=25; i++)
     {
@@ -121,6 +124,7 @@ async function lost()
         await timer(0);
     }
     console.log("patternTiles inside randGene: ",patternTiles)
+    document.getElementById('timer').textContent = 'You Lost!';
 }
 
 //When the array of pattern tiles is empty the win function is called
@@ -149,4 +153,29 @@ async function win()
         await timer(10);
     }
     console.log("patternTiles inside randGene: ",patternTiles)
+}
+
+
+let timeleft = 20;
+async function Countdown()
+{
+  while (timeleft > 0 && !hasLost){
+    await timer(1000)
+      timeleft --;
+
+      if(!hasLost)
+      {
+        document.getElementById('timer').textContent = timeleft + " Seconds";
+      }
+      if(patternTiles.length === 0)
+      {
+        document.getElementById('timer').textContent = 'You Won!';
+        return;
+      }
+      if(timeleft == 0)
+      {
+        lost();
+      }
+    }
+  return;
 }
