@@ -81,37 +81,26 @@
     {
         background-color: white;
         border: 0.8px solid black;
-        border-radius: 10px;
-        /*
-        border-style: outset;
-        */
-
+        border-radius: 10px
     }
+    .chosen {background-color:rgb(17, 36, 252)}
 
-    .colorOnClick
-    {
-        background-color:rgb(17, 36, 252);
-    }
+      .colorOnClick
+      {
+          background-color:rgb(17, 36, 252);
+      }
 
-    .fadeColor
-    {
-        background-color: white;
-    }
+      .fadeColor
+      {
+          background-color: white;
+      }
 
-    .failOnClick
-    {
-      background-color:rgb(224, 6, 6);
-    }
+      .failOnClick
+      {
+        background-color:rgb(224, 6, 6);
+      }
 
-    .rightOnClick
-    {
-      background-color: green;
-    }
-
-      background-color:rgb(224, 6, 6);
-    }
-
-    .rightOnClick
-    {
-      background-color: green;
-    }
+      .rightOnClick
+      {
+        background-color: rgb(36, 165, 44);
+      }
