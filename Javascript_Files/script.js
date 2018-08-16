@@ -101,7 +101,6 @@ async function fading()
 // it turns red
 async function lost()
 {
-    clearInterval(Countdown);
     tilesIds = [];
     for(let i = 1; i<=25; i++)
     {
@@ -120,11 +119,28 @@ async function lost()
         item = tilesIds[c];
         lostTiles.push(item);
         console.log(c);
+
+        if(patternTiles.indexOf(item) != -1)
+        {
+            document.getElementById(item).classList.add('chosen');
+        }
+
         document.getElementById(item).classList.add('failOnClick');
         await timer(0);
+        document.getElementById('timer').textContent = 'You Lost!';
     }
-    console.log("patternTiles inside randGene: ",patternTiles)
-    document.getElementById('timer').textContent = 'You Lost!';
+    await timer(2000)
+
+    canPlay = false;
+
+    for(let c = 0, item = 0,i = 0; c < patternLength; c++)
+    {
+        item = tilesIds[c];
+        document.getElementById(item).classList.remove('failOnClick');
+
+        await timer(0);
+    }
+
 }
 
 //When the array of pattern tiles is empty the win function is called
@@ -178,4 +194,10 @@ async function Countdown()
       }
     }
   return;
+}
+
+
+function reset()
+{
+    location.reload();
 }

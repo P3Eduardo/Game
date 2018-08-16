@@ -8,8 +8,36 @@
   text-align: center;
     color: skyblue;
 }
+.buttons:hover {
+  background-color: lightblue;
+}
 
-
+.buttons:active {
+  background-color: skyblue;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.buttons{
+display: inline-block;
+ padding: 10px 15px;
+ font-size: 24px;
+ cursor: pointer;
+ text-align: center;
+ text-decoration: none;
+ outline: none;
+ color: #fff;
+ background-color: skyblue;
+ border: none;
+ border-radius: 15px;
+ box-shadow: 0 9px #999;
+}
+{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns:500px 500px 500px;
+    grid-template-rows: 100px 100px 100px;
+justify-content: center;
+}
 .change
 {
   margin-left: 100px;
