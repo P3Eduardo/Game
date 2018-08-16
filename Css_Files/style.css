@@ -39,9 +39,14 @@
 
 .time
 {
-  background-image:url('timer.png');
-  height: 500px;
-  width: 105px;
+  background-image:url('Timer.png');
+  height:116px;
+  width: 697px;
+  display: block;
+  margin-bottom:400px;
+  margin-left:auto;
+  transform:rotate(270deg);
+
 }
 
 
@@ -73,7 +78,7 @@
         margin-top: 25px;
         display:grid;
         grid-template-columns: 100px 100px 100px 100px 100px;
-        grid-template-rows: 100px 100px 100px 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px 100px 100px;
         justify-content: center;
     }
 
